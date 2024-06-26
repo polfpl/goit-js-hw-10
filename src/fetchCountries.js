@@ -6,11 +6,11 @@ const fetchCountreies = async name => {
         const response = await fetch(
             COUNTRIES_API_URL +
             name +
-            '?fields=name,capital,population,flags,languages'
+            '?fields=name.official,capital,population,flags.svg,languages'
         );
         if (response.status == 200) {
-            let json = await response.json();
-            return json;
+            let object = await response.json();
+            return object;
         }
     } catch (error) {
         throw new Error(response.status);
