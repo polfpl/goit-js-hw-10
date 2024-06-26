@@ -15,7 +15,7 @@ function inputHandler(event) {
     cleanCountry()
     cleanListCountry()
 
-    fetchCountreies(searchInput)
+    fetchCountries(searchInput)
     .then(data => {
         if (data.lenght > 10) {
             Notify.info('Too many matches found. Please enter a more specific name.');
