@@ -1,4 +1,4 @@
-import '.css/styles.css';
+// import '.css/styles.css';
 import { fetchCountreies } from './fetchCountries';
 import debounce from 'lodash.debounce';
 import { Notify } from 'notiflix';
@@ -68,8 +68,7 @@ function countryDataMarkup(data) {
             );
             infoCountry.innerHTML = createDataMarkup(wantedCountry);
             console.log('item clicked!', clickedCountry);
-            cleanListCountry():
+            cleanListCountry();
         });
     }) 
-    }
 }
