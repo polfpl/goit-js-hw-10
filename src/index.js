@@ -1,10 +1,9 @@
 // import '.css/styles.css';
 import { fetchCountries } from './fetchCountries';
 import debounce from 'lodash.debounce';
-import lodashDebounce from 'lodash.debounce';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-const inputCountry = document.querySelector('input#serch-box');
+const inputCountry = document.querySelector('input#search-box');
 const listCountry = document.querySelector('.country-list');
 const infoCountry = document.querySelector('.country-info');
 

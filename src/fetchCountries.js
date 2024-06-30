@@ -1,4 +1,4 @@
-// import Notiflix from "notiflix";
+import Notiflix from "notiflix";
 
 const COUNTRIES_API_URL = "https://restcountries.com/v2/name/{name}";
 const fetchCountreies = async name => {
