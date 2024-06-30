@@ -76,5 +76,9 @@ function countryDataMarkup(data) {
 inputCountry.addEventListener('input', debounce(inputHandler, DEBOUNCE_DELAY));
 
 function cleanCountry() {
+    infoCountry.innerHTML = '';
+};
+
+function cleanListCountry() {
     listCountry.innerHTML = '';
 };

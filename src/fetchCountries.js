@@ -1,11 +1,15 @@
 import Notiflix from "notiflix";
 
-const COUNTRIES_API_URL = "https://restcountries.com/v2/name/{name}";
-const fetchCountreies = async name => {
+const COUNTRIES_API_URL = "https://restcountries.com/v3.1/name/";
+
+const fetchCountries = async name => {
     try {
         const response = await fetch(
-            COUNTRIES_API_URL + name + '?fields=name.official,capital,population,flags.svg,languages'
+            COUNTRIES_API_URL + 
+            name + 
+            '?fields=name,capital,population,flags,languages'
         );
+
         if (response.status == 200) {
             let object = await response.json();
             return object;
@@ -15,4 +19,4 @@ const fetchCountreies = async name => {
     }
 };
 
-export { fetchCountreies };
+export { fetchCountries };
