@@ -17,7 +17,7 @@ function inputHandler(event) {
 
     fetchCountries(searchInput)
     .then(data => {
-        if (data.lenght > 10) {
+        if (data.length > 10) {
             Notify.info('Too many matches found. Please enter a more specific name.');
             return;
         }
@@ -40,9 +40,9 @@ function createDataMarkup(data) {
     const { name, capital, population, flags, languages } = countryEl;
     return `
             <li class="country_item">
-                <div class="country_flag-name-container">
+                <div class="country__flag-name-container">
                     <img src="${flags.svg}" alt="${name.common}" height="30px"/></p>
-                    <h1 class="country_title">${name.official}</h1>
+                    <h1 class="country__title">${name.official}</h1>
                 </div>
                 <p><b>Capial:</b> ${capital}
                 <P><b>Population:</b> ${population}</p>
@@ -52,13 +52,15 @@ function createDataMarkup(data) {
 };
 
 function countryDataMarkup(data) {
-    if (data.lenght === 1) {
+    if (data.length === 1) {
         const dataMarkup = createDataMarkup(data);
         infoCountry.innerHTML = dataMarkup;
     } else {
         const listMarkup = createListMarkup(data);
-    }   listCountry.innerHTML = listMarkup;
+       listCountry.innerHTML = listMarkup;
+
     const listCountryItem = document.querySelectorAll('li');
+    
     listCountryItem.forEach(item => {
         item.addEventListener('click', event => {
             const clickedCountry = event.currentTarget.dataset.country;
@@ -71,6 +73,7 @@ function countryDataMarkup(data) {
             cleanListCountry();
         });
     }) 
+}
 }
 
 inputCountry.addEventListener('input', debounce(inputHandler, DEBOUNCE_DELAY));
