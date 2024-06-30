@@ -48,7 +48,7 @@ function createDataMarkup(data) {
           <li class="country__item">
                 <div class="country__flag-name-container">
                     <img src="${flags.svg}" alt="${name.common}" height="30px"/></p>
-                    <h1 class="country__title">${name.official}</h1>
+                    <h1 class="country__title">${name}</h1>
                 </div>
                 <p><b>Capial:</b> ${capital}
                 <P><b>Population:</b> ${population}</p>
