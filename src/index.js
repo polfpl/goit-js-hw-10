@@ -35,7 +35,7 @@ function createListMarkup(data) {
     .map(
       ({ name, flags }) =>
         `<li class="country-list__item" data-country='${name.common}'>
-            <img class="country-list__image" src="${flags.svg}" alt="${name.common}" height="40px"/>
+            <img class="country-list__image" src='${flags.svg}' alt="${name.common}" height="40px"/>
             <p class="country-list__post">${name.common}</p></li>`
     )
     .join('');
@@ -45,17 +45,15 @@ function createDataMarkup(data) {
   const countryEl = data[0];
   const { name, capital, population, flags, languages } = countryEl;
   return `
-          <  <li class="country__item">
+          <li class="country__item">
                 <div class="country__flag-name-container">
-                    <img src="${flags.svg}" alt="${
-    name.common
-  }" height="30px"/></p>
+                    <img src="${flags.svg}" alt="${name.common}" height="30px"/></p>
                     <h1 class="country__title">${name.official}</h1>
                 </div>
                 <p><b>Capial:</b> ${capital}
                 <P><b>Population:</b> ${population}</p>
                 <b>Languages:</b> ${Object.values(data[0].languages)}</p>
-            </li>>
+            </li>
             `;
 }
 
