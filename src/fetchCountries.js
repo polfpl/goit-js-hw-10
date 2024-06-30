@@ -1,6 +1,6 @@
 import Notiflix from "notiflix";
 
-const COUNTRIES_API_URL = "https://restcountries.com/v3.1/name/";
+const COUNTRIES_API_URL = "https://restcountries.com/v2/name/";
 
 const fetchCountries = async name => {
     try {
@@ -11,8 +11,8 @@ const fetchCountries = async name => {
         );
 
         if (response.status == 200) {
-            let object = await response.json();
-            return object;
+            let obj = await response.json();
+            return obj;
         }
     } catch (error) {
         throw new Error(response.status);

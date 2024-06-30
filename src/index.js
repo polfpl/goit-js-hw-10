@@ -4,8 +4,8 @@ import debounce from 'lodash.debounce';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const inputCountry = document.querySelector('input#search-box');
-const listCountry = document.querySelector('.country-list');
-const infoCountry = document.querySelector('.country-info');
+const listCountry = document.querySelector('country-list');
+const infoCountry = document.querySelector('country-info');
 
 const DEBOUNCE_DELAY = 300;
 
@@ -31,7 +31,9 @@ function inputHandler(event) {
 function createListMarkup(data) {
     return data
     .map(({ name, flags}) => 
-    `<li class="country-list__item" data-country='${name.common}'><img class="country"`)
+        `<li class="country-list__item" data-country='${name.common}'>
+            <img class="country-list__image" src="${flags.svg}" alt="${name.common}" height="40px"/>
+            <p class="country-list__post">${name.common}</p></li>`)
     .join('');
 };
 
@@ -39,7 +41,7 @@ function createDataMarkup(data) {
     const countryEl = data[0];
     const { name, capital, population, flags, languages } = countryEl;
         return `
-            <li class="country__item">
+          <  <li class="country__item">
                 <div class="country__flag-name-container">
                     <img src="${flags.svg}" alt="${name.common}" height="30px"/></p>
                     <h1 class="country__title">${name.official}</h1>
@@ -47,7 +49,7 @@ function createDataMarkup(data) {
                 <p><b>Capial:</b> ${capital}
                 <P><b>Population:</b> ${population}</p>
                 <b>Languages:</b> ${Object.values(data[0].languages)}</p>
-            </li>
+            </li>>
             `;
 };
 
