@@ -1,4 +1,5 @@
 import Notiflix from "notiflix";
+import { Notify } from "notiflix";
 
 const COUNTRIES_API_URL = "https://restcountries.com/v3.1/name/";
 
