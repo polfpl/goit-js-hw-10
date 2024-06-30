@@ -38,8 +38,8 @@ function createListMarkup(data) {
 function createDataMarkup(data) {
     const countryEl = data[0];
     const { name, capital, population, flags, languages } = countryEl;
-    return `
-            <li class="country_item">
+        return `
+            <li class="country__item">
                 <div class="country__flag-name-container">
                     <img src="${flags.svg}" alt="${name.common}" height="30px"/></p>
                     <h1 class="country__title">${name.official}</h1>
