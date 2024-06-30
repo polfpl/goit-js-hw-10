@@ -1,4 +1,3 @@
-import '.css/styles.css';
 import { fetchCountries } from './fetchCountries';
 import debounce from 'lodash.debounce';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
@@ -48,14 +47,14 @@ function createDataMarkup(data) {
           <li class="country__item">
                 <div class="country__flag-name-container">
                     <img src="${flags.svg}" alt="${name.common}" height="30px"/></p>
-                    <h1 class="country__title">${name}</h1>
+                    // <h1 class="country__title">${name.official}</h1>
                 </div>
                 <p><b>Capial:</b> ${capital}
                 <P><b>Population:</b> ${population}</p>
                 <b>Languages:</b> ${Object.values(data[0].languages)}</p>
             </li>
-            `;
-}
+            `
+};
 
 function countryDataMarkup(data) {
   if (data.length === 1) {
