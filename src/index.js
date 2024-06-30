@@ -1,6 +1,7 @@
 // import '.css/styles.css';
 import { fetchCountries } from './fetchCountries';
 import debounce from 'lodash.debounce';
+import lodashDebounce from 'lodash.debounce';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const inputCountry = document.querySelector('input#serch-box');
@@ -72,3 +73,9 @@ function countryDataMarkup(data) {
         });
     }) 
 }
+
+inputCountry.addEventListener('input', debounce(inputHandler, DEBOUNCE_DELAY));
+
+function cleanCountry() {
+    listCountry.innerHTML = '';
+};
