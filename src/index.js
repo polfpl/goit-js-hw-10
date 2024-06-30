@@ -31,7 +31,7 @@ function inputHandler(event) {
 function createListMarkup(data) {
     return data
     .map(({ name, flags}) => 
-    `<li class="country-list_item" data-country='${name.common}'><img class="country"`)
+    `<li class="country-list__item" data-country='${name.common}'><img class="country"`)
     .join('');
 };
 
